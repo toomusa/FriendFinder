@@ -1,0 +1,16 @@
+html {
+    width: 100%;
+}
+
+#main {
+    background-color: aqua;
+}
+
+#heading {
+    background-color: red;
+}
+
+#footing {
+    background-color: green;
+}
+
