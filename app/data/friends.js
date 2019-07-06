@@ -54,8 +54,9 @@ const profiles = [
 
 let totalScoreArray = profiles.map(item => {
     let scoreSum = 0;
-    item.scores.forEach(num => {scoreSum += item.scores[num]})
-    console.log(scoreSum)
+    item.scores.forEach(num => {
+        scoreSum += num
+    })
     return scoreSum;
 })
 
