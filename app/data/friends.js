@@ -74,3 +74,8 @@ const questions = [
     "All is unfair in love and war."
 ]
 
+module.exports = {
+    profiles,
+    questions,
+    totalScoreArray
+}

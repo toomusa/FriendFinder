@@ -1,9 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" type="text/css" href="./../../assets/css/reset.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./../../assets/css/style.css">
+
+  <title>Friend Finder</title>
+</head>
+<body>
+
+  <div class="container">
+  
+    <div class="row">
+      <div class="col-sm-12 col-xs-12 col-md-12" id="heading">
+        <!-- header row -->
+        <h1>Friend Finder</h1>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-sm-8 col-xs-12 col-md-8 offset-sm-2 offset-xs-1 offset-md-2" id="main">
+        <!-- main content area -->
+        <form role="form" action="http://localhost:7777/api/survey" method="POST">
+            <h3>Survey Questions</h3>
+            <h5>About You</h5>
+            <div class="questionTitle">Name (required)</div>
+            <input type="text" name="name" style="width: 100%">
+            <div class="questionTitle">Link to Profile Image (required)</div>
+            <input type="text" name="photo" style="width: 100%">
+            <hr>
+
+            <div class="questionTitle">Question 1</div>
+            <div id="Q1"></div>
+            <select class="response" id="A1" name="A1">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10 (Strongly Agree)</option>
+              </select>
+            <hr>
+
+            <div class="questionTitle">Question 2</div>
+            <div id="Q2"></div>
+            <select class="response" id="A2" name="A2">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10 (Strongly Agree)</option>
+              </select>
+            <hr>
+
+            <div class="questionTitle">Question 3</div>
+            <div id="Q3"></div>
+            <select class="response" id="A3" name="A3">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10 (Strongly Agree)</option>
+              </select>
+            <hr>
+
+            <div class="questionTitle">Question 4</div>
+            <div id="Q4"></div>
+            <select class="response" id="A4" name="A4">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10 (Strongly Agree)</option>
+              </select>
+            <hr>
+
+            <div class="questionTitle">Question 5</div>
+            <div id="Q5"></div>
+            <select class="response" id="A5" name="A5">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10 (Strongly Agree)</option>
+              </select>
+            <hr>
+
+            <div class="questionTitle">Question 6</div>
+            <div id="Q6"></div>
+            <select class="response" id="A6" name="A6">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10 (Strongly Agree)</option>
+              </select>
+            <hr>
+
+            <div class="questionTitle">Question 7</div>
+            <div id="Q7"></div>
+            <select class="response" id="A7" name="A7">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10 (Strongly Agree)</option>
+              </select>
+            <hr>
+
+            <div class="questionTitle">Question 8</div>
+            <div id="Q8"></div>
+            <select class="response" id="A8" name="A8">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10 (Strongly Agree)</option>
+              </select>
+            <hr>
+
+            <div class="questionTitle">Question 9</div>
+            <div id="Q9"></div>
+            <select class="response" id="A9" name="A9">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10 (Strongly Agree)</option>
+              </select>
+            <hr>
+
+            <div class="questionTitle">Question 10</div>
+            <div id="Q10"></div>
+            <select class="response" id="A10" name="A10">
+                <option type="number" value=""></option>
+                <option type="number" value="1">1 (Strongly Disagree)</option>
+                <option type="number" value="2">2</option>
+                <option type="number" value="3">3</option>
+                <option type="number" value="4">4</option>
+                <option type="number" value="5">5</option>
+                <option type="number" value="6">6</option>
+                <option type="number" value="7">7</option>
+                <option type="number" value="8">8</option>
+                <option type="number" value="9">9</option>
+                <option type="number" value="10">10 (Strongly Agree)</option>
+              </select>
+            <hr>
+
+            <button class="btn btn-lg btn-primary" type="submit">Submit Answers</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-xs-12 col-md-12" id="footing">
+        <!-- footer row -->
+      </div>
+    </div>
+    
+  </div>
+
+  <script type="text/javascript">
+    
+    const questions = [
+        "Political correctness is a detriment to freedom of speech.",
+        "Trigger words are the scapegoat of the mentally feeble.",
+        "Extremesim is the root of all the world's problems.",
+        "Sustainable practices at an individual level will not save the world.",
+        "Lobbying is legalized bribery.",
+        "Intolerance of intolerance is a virtue.",
+        "Passion without purpose is obsession.",
+        "Being offended is a personal choice.",
+        "Every vote should count, but not weigh the same.",
+        "All is unfair in love and war."
+    ]
+
+    // Populate survey page with questions
+    questions.forEach(e => {
+        (document).getElementById(`Q${questions.indexOf(e) + 1}`).textContent = e;
+    });
 
 
 
+  </script>
 
-
-
-<form role="form" action="http://localhost:7777/survey" method="POST">
-
-</form>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+  <!-- <script src="../data/friends.js"></script> -->
+</html>
