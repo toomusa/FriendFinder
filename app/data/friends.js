@@ -1,4 +1,6 @@
 
+const $ = require("jquery");
+
 const profiles = [
     {
         name: "Kelly",
@@ -75,8 +77,49 @@ const questions = [
     "All is unfair in love and war."
 ]
 
+const compareScores = (newUser) => {
+        return new Promise ((resolve, reject) => {
+            if (!newUser) reject();
+            let userOptions = [];
+            profiles.forEach(user => {
+                let scoreComparison = 0;
+                for (let i = 0; i < user.scores.length; i++) {
+                    scoreComparison += Math.abs(user.scores[i] - newUser.scores[i]);
+                }
+                userOptions.push(scoreComparison);
+            })
+            let closestMatch = Math.min(...userOptions);
+            let matchingProfile = userOptions.indexOf(closestMatch);
+            resolve(profiles[matchingProfile]);
+        })
+    }
+
+// const writePage = () => {
+//     questions.forEach(e => {
+//         $(`Q${questions.indexOf(e) + 1}`).text(e);
+//     });
+
+//     // Populate select box with options
+//     let opt0 = $(`<option value=""></option>`)
+//     let opt1 = $(`<option value="1">1 (Disagree)</option>`)
+//     let opt2 = $(`<option value="2">2</option>`)
+//     let opt3 = $(`<option value="3">3</option>`)
+//     let opt4 = $(`<option value="4">4</option>`)
+//     let opt5 = $(`<option value="5">5</option>`)
+//     let opt6 = $(`<option value="6">6</option>`)
+//     let opt7 = $(`<option value="7">7</option>`)
+//     let opt8 = $(`<option value="8">8</option>`)
+//     let opt9 = $(`<option value="9">9</option>`)
+//     let opt10 = $(`<option value="10">10 (Agree)</option>`)
+//     $(".response").append(opt0, opt1, opt2, opt3, opt4, opt5, opt6, opt7, opt8, opt9, opt10)
+// }
+
+// writePage();
+
 module.exports = {
     profiles,
     questions,
-    totalScoreArray
+    totalScoreArray,
+    compareScores
 }
+
