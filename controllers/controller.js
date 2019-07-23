@@ -1,5 +1,5 @@
 
-const friends = require("../app/data/friends.js");
+const profiles = require("../app/constants/constants.js").profiles;
 const path = require("path");
 
 module.exports = {
@@ -9,28 +9,23 @@ module.exports = {
     surveyPage: (req, res) => {
         res.sendFile(path.join(__dirname, "../app/public/survey.html"));
     },
-    profilesData: (req, res) => {
-        res.json(friends.profiles);
+    friendsData: (req, res) => {
+        res.json(profiles);
     },
-    compareScores: (newUser) => {
-        return new Promise ((resolve, reject) => {
-            if (!newUser) reject();
-            let userOptions = [];
-            profiles.forEach(user => {
-                let scoreComparison = 0;
-                for (let i = 0; i < user.scores.length; i++) {
-                    scoreComparison += Math.abs(user.scores[i] - newUser.scores[i]);
-                }
-                userOptions.push(scoreComparison);
-            })
-            let closestMatch = Math.min(...userOptions);
-            let matchingProfile = userOptions.indexOf(closestMatch);
-            resolve(profiles[matchingProfile]);
+    compareScores: (req, res) => {
+        let newUser = req.body;
+        let userOptions = [];
+        profiles.forEach(user => {
+            let scoreComparison = 0;
+            for (let i = 0; i < user.scores.length; i++) {
+                scoreComparison += Math.abs(user.scores[i] - newUser.scores[i]);
+            }
+            userOptions.push(scoreComparison);
         })
-    },
-    friendsData: async (req, res) => {
-        friends.profiles.push(req);
-        console.log(friends.profiles);
-        res.json(friends.profiles);
+        let closestMatch = Math.min(...userOptions);
+        let matchingProfile = userOptions.indexOf(closestMatch);
+        let bestMatch = profiles[matchingProfile];
+        profiles.push(newUser);
+        res.send(bestMatch);
     }
 }
