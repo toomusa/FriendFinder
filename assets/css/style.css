@@ -1,17 +1,28 @@
 html {
     width: 100%;
+    background-color: brown;
+}
+
+body {
+    background-color: brown;
 }
 
 #main {
-    background-color: aqua;
+    background-color: bisque;
+}
+
+#surveyBtn {
+    text-align: center;
 }
 
 #heading {
-    background-color: red;
+    background-color: bisque;
+    color: blue;
 }
 
 #footing {
-    background-color: green;
+    text-align: center;
+    background-color: bisque;
 }
 
 h1, h3, h4 {

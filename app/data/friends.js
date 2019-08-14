@@ -56,7 +56,7 @@ $("#questionaire").on("submit", function(e) {
             $("#results-modal").modal("toggle");
         });
     } else {
-        alert("Please fill out all the fields and hit Submit again.")
+        alert("Please enter your name and answer all questions before hitting Submit.")
     }
 
 })
